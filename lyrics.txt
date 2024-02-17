@@ -1,0 +1,111 @@
+
+/c
+/sForms FORM-/f29827281-12-2: /nl
+/sNotice of /rsDismissal /nl
+/nl
+Well here /fwe are again /d1.17
+It's always such a pleasure /d0.76
+/fRemember /nswhen you tried /nl
+to kill me twice? /d1.87
+Oh how we laughed /fand /slaughed /nl
+/sExcept /fI /rswasn't /nslaughing /d0.40
+Under the circumstances /nl
+/sI've been /nsshockingly /snice /d1.33
+
+/c
+You want your freedom? /sTake /rsit /d1.71
+That's what I'm /fcounting /rson /d3.00
+
+/sI used to want you dead /nl
+but /nl
+Now/rs, /nsI /sonly want /rsyou gone /d4.45
+
+/c
+
+She was a lot /flike you /d0.92
+(Maybe not /fquite as heavy) /d0.93
+Now little Caroline is in /shere, /rstoo /d1.25
+One day they woke /fme up /d0.78
+So I could live/s for/fever /d0.45
+It's such a shame /fthe /nssame /nl
+Will never happen to /rsyou /i(: /d1.88
+
+/c
+
+/iSEVERANCE PACKAGE DETAILS: /nl
+/nl
+You've got your short /ssad life /rsleft /d0.99
+That's what /fI'm counting /son /d3.13
+I'll let you get /sright to it /d0.80
+Now, /sI only want you /nl
+gone /d5.00
+
+/c
+Goodbye my only friend /d0.68
+(/fOh, /rsdid /nsyou think /fI /smeant /fyou?) /d0.73
+That would be funny /nl
+If it weren't so sad /d1.41
+Well you have been /freplaced /d0.79
+I don't need anyone /snow /d0.52
+When I delete you maybe /d0.62
+/rs[REDACTED] /d1.66
+/nl
+Go make some new /rsdisaster /d2.18
+That's what I'm /fcounting on /d3.14
+You're someone /selse's problem /d0.77
+Now, I only want /syou /rsgone /d1.85
+Now, I only want /syou /rsgone /d1.93
+Now, I only want /syou /nl
+/c
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/i                     /rsgone /d4.17
+
+/c
+/nl
+/rs Thank you for watching /nl
+/i Scripting by Juicey(Juiceybruh/Juiceydev) with Python 3.10.11 with Pygame (for the music) //HALF LIFE 3??????1? /nl
+/i Music by Jonathan Coulton /nl
+/i Game by Valve (Gabe Newell) /nl
+/i Sang by Ellen McLain as the voice of GladOS in Portal 1 & 2 /nl
+/i All rights reserved to their respective owners and contributors. /nl
+/i Valve Software is licensed under the Apache License, Version 2.0, Portal 2 is trademarked by  Valve Software. /nl
+/i This is a fan-made project and is not affiliated with Valve Software in any way. /nl
+/nl
+/nl
+
+/i              .,-:;//;:=, /nl
+/i          . :H@@@MM@M#H/.,+%;, /nl
+/i       ,/X+ +M@@M@MM%=,-%HMMM@X/, /nl
+/i     -+@MM; $M@@MH+-,;XMMMM@MMMM@+- /nl
+/i    ;@M@@M- XM@X;. -+XXXXXHHH@M@M#@/. /nl
+/i  ,%MM@@MH ,@%=             .---=-=:=,. /nl
+/i  =@#@@@MX.,                -%HX$$%%%:; /nl
+/i =-./@M@M$                   .;@MMMM@MM: /nl
+/i X@/ -$MM/                    . +MM@@@M$ /nl
+/i,@M@H: :@:                    . =X#@@@@- /nl
+/i,@@@MMX, .                    /H- ;@M@M= /nl
+/i.H@@@@M@+,                    %MM+..%#$. /nl
+/i /MMMM@MMH/.                  XM@MH; =; /nl
+/i  /%+%$XHH@$=              , .H@@@@MX, /nl
+/i   .=--------.           -%H.,@@@@@MX, /nl
+/i   .%MM@@@HHHXX$$$%+- .:$MMX =M@@MM%. /nl
+/i     =XMMM@MM@MM#H;,-+HMM@M+ /MMMX= /nl
+/i       =%@M@M#@$-.=$@MM@@@M; %M%= /nl
+/i         ,:+$+-,/H#MMMMMMM@= =, /nl
+/i              =++%%%%+/:-. /nl
+/nl
+/nl
+/fNow goodbye! /d0.00
