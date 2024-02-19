@@ -1,4 +1,3 @@
-# this script preserves extra spaces
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import sys
@@ -6,7 +5,7 @@ import time
 import pygame
 
 def type_with_wpm(text, wpm):
-    words = text.split(" ")  # Split by space to preserve extra spaces
+    words = text.split(" ")
     skip_next = False
     for word in words:
         if skip_next:
@@ -39,7 +38,7 @@ def type_with_wpm(text, wpm):
             time.sleep(delay)
             skip_next = True
             continue
-        
+            
         delay = 60 / wpm
         
         for i, char in enumerate(word):
@@ -53,10 +52,9 @@ def type_with_wpm(text, wpm):
             time.sleep(delay)
     sys.stdout.flush()
 
-
 lyrics_file = './lyrics.txt'
 if not os.path.exists(lyrics_file):
-    print("Unable to find the file 'lyrics.txt'.")
+    print("Unable to find 'lyrics.txt'.")
     sys.exit()
 
 with open(lyrics_file, 'r') as file:
@@ -64,14 +62,14 @@ with open(lyrics_file, 'r') as file:
 
 bg_music_file = "wyg.mp3"
 if not os.path.exists(bg_music_file):
-    print("Unable to find the file 'wyg.mp3'. Background music will not play.")
+    print("Unable to find 'wyg.mp3'. Background music will not play.")
 
 pygame.init()
 if os.path.exists(bg_music_file):
     pygame.mixer.music.load(bg_music_file)
     pygame.mixer.music.play()
 
-original_wpm = 800 
+original_wpm = 800
 wpm = original_wpm
 
 for line in lyrics.split("\n"):
@@ -82,6 +80,5 @@ for line in lyrics.split("\n"):
         print()
     elif line.strip():
         type_with_wpm(line, wpm)
-
 
 pygame.mixer.music.stop()
