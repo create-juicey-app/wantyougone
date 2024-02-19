@@ -1,4 +1,3 @@
-
 /c
 /sForms FORM-/f29827281-12-2: /nl
 /sNotice of /rsDismissal /nl
@@ -56,56 +55,3 @@ You're someone /selse's problem /d0.77
 Now, I only want /syou /rsgone /d1.85
 Now, I only want /syou /rsgone /d1.93
 Now, I only want /syou /nl
-/c
-/nl
-/nl
-/nl
-/nl
-/nl
-/nl
-/nl
-/nl
-/nl
-/nl
-/nl
-/nl
-/nl
-/nl
-/i                     /rsgone /d4.17
-
-/c
-/nl
-/rs Thank you for watching /nl
-/i Scripting by Juicey(Juiceybruh/Juiceydev) with Python 3.10.11 with Pygame (for the music) //HALF LIFE 3??????1? /nl
-/i Music by Jonathan Coulton /nl
-/i Game by Valve (Gabe Newell) /nl
-/i Sang by Ellen McLain as the voice of GladOS in Portal 1 & 2 /nl
-/i All rights reserved to their respective owners and contributors. /nl
-/i Valve Software is licensed under the Apache License, Version 2.0, Portal 2 is trademarked by  Valve Software. /nl
-/i This is a fan-made project and is not affiliated with Valve Software in any way. /nl
-/nl
-/nl
-
-/i              .,-:;//;:=, /nl
-/i          . :H@@@MM@M#H/.,+%;, /nl
-/i       ,/X+ +M@@M@MM%=,-%HMMM@X/, /nl
-/i     -+@MM; $M@@MH+-,;XMMMM@MMMM@+- /nl
-/i    ;@M@@M- XM@X;. -+XXXXXHHH@M@M#@/. /nl
-/i  ,%MM@@MH ,@%=             .---=-=:=,. /nl
-/i  =@#@@@MX.,                -%HX$$%%%:; /nl
-/i =-./@M@M$                   .;@MMMM@MM: /nl
-/i X@/ -$MM/                    . +MM@@@M$ /nl
-/i,@M@H: :@:                    . =X#@@@@- /nl
-/i,@@@MMX, .                    /H- ;@M@M= /nl
-/i.H@@@@M@+,                    %MM+..%#$. /nl
-/i /MMMM@MMH/.                  XM@MH; =; /nl
-/i  /%+%$XHH@$=              , .H@@@@MX, /nl
-/i   .=--------.           -%H.,@@@@@MX, /nl
-/i   .%MM@@@HHHXX$$$%+- .:$MMX =M@@MM%. /nl
-/i     =XMMM@MM@MM#H;,-+HMM@M+ /MMMX= /nl
-/i       =%@M@M#@$-.=$@MM@@@M; %M%= /nl
-/i         ,:+$+-,/H#MMMMMMM@= =, /nl
-/i              =++%%%%+/:-. /nl
-/nl
-/nl
-/fNow goodbye! /d0.00
