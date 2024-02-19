@@ -41,6 +41,7 @@ class CustomConsole(tk.Tk):
         self.update_idletasks()
 
         self.after(self.delay, self.update_matrix)
+    
     def read_process_output(self):
         if self.process is not None:
             if self.process.poll() is not None:
