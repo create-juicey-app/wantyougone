@@ -60,13 +60,13 @@ if not os.path.exists(lyrics_file):
 with open(lyrics_file, 'r') as file:
     lyrics = file.read()
 
-bg_music_file = "wyg.mp3"
+music_file = "WantYouGone.mp3"
 if not os.path.exists(bg_music_file):
-    print("Unable to find 'wyg.mp3'. Background music will not play.")
+    print("Unable to find " music_file ". Music will not play.")
 
 pygame.init()
-if os.path.exists(bg_music_file):
-    pygame.mixer.music.load(bg_music_file)
+if os.path.exists(music_file):
+    pygame.mixer.music.load(music_file)
     pygame.mixer.music.play()
 
 original_wpm = 800
