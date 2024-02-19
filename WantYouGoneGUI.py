@@ -29,7 +29,7 @@ class CustomConsole(tk.Tk):
         threading.Thread(target=self.start_console).start()
 
     def start_console(self):
-        self.process = subprocess.Popen(['python', './wantyougone.py'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
+        self.process = subprocess.Popen(['python', './WantYouGone.py'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT, universal_newlines=True)
 
         self.read_process_output()
 
@@ -37,9 +37,7 @@ class CustomConsole(tk.Tk):
         binary_string = ''.join(random.choice('01') for _ in range(20))
 
         self.matrix.configure(text=binary_string)
-        
         self.update_idletasks()
-
         self.after(self.delay, self.update_matrix)
     
     def read_process_output(self):
