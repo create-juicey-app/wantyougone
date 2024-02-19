@@ -61,8 +61,8 @@ with open(lyrics_file, 'r') as file:
     lyrics = file.read()
 
 music_file = "WantYouGone.mp3"
-if not os.path.exists(bg_music_file):
-    print("Unable to find ", music_file, ". Music will not play.")
+if not os.path.exists(music_file):
+    print("Unable to find ", "'", music_file, "'", ". Music will not play.")
 
 pygame.init()
 if os.path.exists(music_file):
