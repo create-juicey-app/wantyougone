@@ -71,7 +71,6 @@ Now, I only want /syou /nl
 /nl
 /nl
 /i                     /rsgone /d4.17
-
 /c
 /nl
 /i Scripting by Juicey with Python 3.10.11 with Pygame (for the music) /nl
