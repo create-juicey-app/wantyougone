@@ -55,3 +55,31 @@ You're someone /selse's problem /d0.77
 Now, I only want /syou /rsgone /d1.85
 Now, I only want /syou /rsgone /d1.93
 Now, I only want /syou /nl
+/c
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/nl
+/i                     /rsgone /d4.17
+
+/c
+/nl
+/i Scripting by Juicey with Python 3.10.11 with Pygame (for the music) /nl
+/i Music by Jonathan Coulton. /nl
+/i Sang by Ellen McLain as the voice of GlaDOS in Portal 1 & 2. /nl
+/i Game by Valve. /nl
+/i All rights reserved to their respective owners and contributors. /nl
+/i Portal 2 is trademarked by Valve Software. /nl
+/i This is a fan-made project and is not affiliated with Valve Software in any way. /nl
+/nl
+/nl
