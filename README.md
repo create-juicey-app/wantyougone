@@ -2,6 +2,8 @@
 
 litteraly https://www.youtube.com/watch?v=lT-NxwrjgZM
 
+ps: you can use this project everywhere idc, make your own dreams
+
 # Usage
 Execute wantyougone.py using any version of python thats over 3.6, if you want to start the GUI version, well execute start.py **ONLY USING THE COMMAND PROMPT** 
 
