@@ -1,5 +1,4 @@
 import os
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import sys
 import time
 import pygame
@@ -52,33 +51,40 @@ def type_with_wpm(text, wpm):
             time.sleep(delay)
     sys.stdout.flush()
 
-lyrics_file = './lyrics.txt'
-if not os.path.exists(lyrics_file):
-    print("Unable to find 'lyrics.txt'.")
-    sys.exit()
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-with open(lyrics_file, 'r') as file:
-    lyrics = file.read()
+def main():
+    lyrics_file = os.path.join(os.getcwd(), 'lyrics.txt')
+    if not os.path.exists(lyrics_file):
+        print("Unable to find 'lyrics.txt'.")
+        sys.exit()
 
-music_file = "WantYouGone.mp3"
-if not os.path.exists(music_file):
-    print("Unable to find ", "'", music_file, "'", ". Music will not play.")
+    with open(lyrics_file, 'r') as file:
+        lyrics = file.read()
 
-pygame.init()
-if os.path.exists(music_file):
-    pygame.mixer.music.load(music_file)
-    pygame.mixer.music.play()
+    music_file = os.path.join(os.getcwd(), "WantYouGone.mp3")
+    if not os.path.exists(music_file):
+        print(f"Unable to find '{music_file}'. Music will not play.")
 
-original_wpm = 800
-wpm = original_wpm
+    pygame.init()
+    if os.path.exists(music_file):
+        pygame.mixer.music.load(music_file)
+        pygame.mixer.music.play()
 
-for line in lyrics.split("\n"):
-    if '/c' in line:
-        os.system('cls' if os.name == 'nt' else 'clear')
-    elif line.strip() and '/nl' not in line:
-        type_with_wpm(line, wpm)
-        print()
-    elif line.strip():
-        type_with_wpm(line, wpm)
+    original_wpm = 800
+    wpm = original_wpm
 
-pygame.mixer.music.stop()
+    for line in lyrics.split("\n"):
+        if '/c' in line:
+            clear_screen()
+        elif line.strip() and '/nl' not in line:
+            type_with_wpm(line, wpm)
+            print()
+        elif line.strip():
+            type_with_wpm(line, wpm)
+
+    pygame.mixer.music.stop()
+
+if __name__ == "__main__":
+    main()
