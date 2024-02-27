@@ -73,12 +73,13 @@ Now, I only want /syou /nl
 /i                     /rsgone /d4.17
 /c
 /nl
-/i Scripting by Juicey with Python 3.10.11 with Pygame (for the music) /nl
-/i Music by Jonathan Coulton. /nl
-/i Sang by Ellen McLain as the voice of GlaDOS in Portal 1 & 2. /nl
-/i Game by Valve. /nl
-/i All rights reserved to their respective owners and contributors. /nl
-/i Portal 2 is trademarked by Valve Software. /nl
-/i This is a fan-made project and is not affiliated with Valve Software in any way. /nl
+/i Scripting: Juicey and Cloud /nl
+/i Made with: Python /nl
+/i Music: Jonathan Coulton /nl
+/i Vocals: Ellen McLain (voice of GLaDOS in Portal 1 & 2) /nl
+/i Game: Valve /nl
+/i Trademark: Portal 2 is a trademark of Valve Software. /nl
+/i Rights: All rights reserved to respective owners and contributors. /nl
+/i Disclaimer: This is a fan-made project and is not affiliated with Valve Software. /nl
 /nl
 /nl
