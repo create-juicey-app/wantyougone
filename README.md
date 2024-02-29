@@ -14,14 +14,14 @@ The Python project, from [this video](https://youtu.be/lT-NxwrjgZM).
 Run LyricGenerator.py to create lyrics. This will generate lyrics.txt and set delays for your lyrics.
 
 Syntax:
-     - `[/f]`: Speed up the lyrics.
-     - `[/s]`: Slow down the lyrics.
-     - `[/rs]`: Slow down the lyrics even more.
-     - `[/ns]`: Set normal speed for the lyrics.
-     - `[/i]`: Instantaneous speed for the lyrics.
-     - `[/c]`: Clear the screen.
-     - `[/nl]`: Properly start a new line.
-     - `[/d]`: Set a delay before starting a new line.
+- `[/f]`: Speed up the lyrics.
+- `[/s]`: Slow down the lyrics.
+- `[/rs]`: Slow down the lyrics even more.
+- `[/ns]`: Set normal speed for the lyrics.
+- `[/i]`: Instantaneous speed for the lyrics.
+- `[/c]`: Clear the screen.
+- `[/nl]`: Properly start a new line.
+- `[/d]`: Set a delay before starting a new line.
 
 ## License
 
