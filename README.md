@@ -23,6 +23,8 @@ Syntax:
 - `[/nl]`: Properly start a new line.
 - `[/d]`: Set a delay before starting a new line.
 
+To change the song: Go to line 67 in WantYouGone.py and change "WantYouGone.mp3".
+
 ## License
 
 WantYouGonePython by Juicey is licensed under [CC0 1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0).
