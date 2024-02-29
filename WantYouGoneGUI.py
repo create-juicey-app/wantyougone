@@ -3,14 +3,13 @@ import customtkinter
 import subprocess
 import queue
 import threading
-import random
 
 class CustomConsole(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Want You Gone GUI")
         self.geometry("800x600")
-        self.configure(bg="#704910")
+        self.configure(bg="#FF7F00")
 
         self.output_text = customtkinter.CTkLabel(master=self, justify="left", text="", width=100, height=30, text_color="#e9b15d", font=("Console", 28))
         self.output_text.place(x=10, y=10)
@@ -18,10 +17,6 @@ class CustomConsole(tk.Tk):
         self.frame = customtkinter.CTkFrame(master=self, width=155, height=40, border_color="#704910")
         self.frame.place(relx=0.7, rely=0.02, anchor='nw')
         
-        self.matrix = customtkinter.CTkLabel(master=self.frame, anchor="ne", justify="left", text="101001110100", width=100, height=30, text_color="#e9b15d", font=("Console", 12))
-        self.matrix.place(relx=0.5, rely=0.5, anchor='center')
-
-        self.update_matrix()
         self.process = None
         self.output_queue = queue.Queue()
         self.read_thread = threading.Thread(target=self.start_console)
@@ -40,11 +35,6 @@ class CustomConsole(tk.Tk):
                 self.process.wait()
                 self.process = None
 
-    def update_matrix(self):
-        binary_string = ''.join(random.choice('01') for _ in range(20))
-        self.matrix.configure(text=binary_string)
-        self.after(1000, self.update_matrix)
-    
     def read_process_output(self):
         while not self.output_queue.empty():
             line = self.output_queue.get()
