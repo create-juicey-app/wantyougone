@@ -1,31 +1,30 @@
-# WYGpython
+# Want You Gone in Python
 
-litteraly https://www.youtube.com/watch?v=lT-NxwrjgZM
+The Python project, from [this video](https://youtu.be/lT-NxwrjgZM).
 
-ps: you can use this project everywhere idc, make your own dreams
+## Usage
 
-# Usage
-Execute wantyougone.py using any version of python thats over 3.6, if you want to start the GUI version, well execute start.py **ONLY USING THE COMMAND PROMPT** 
+1. Install the required dependencies by running: `pip install -r requirements.txt`.
 
-If you wanna make your own lyrics you can exectue WYGgen.py, this will create a copy to lyrics.txt and set the delays for the lyrics you made, 
+2. To run the command-line version, execute `WantYouGone.py` with any Python version over 3.6.
 
-heres the syntax for a lyrics file :
+3. For the GUI version, execute `WantYouGoneGUI.py` using the command prompt.
 
-- [/f] make the lyrics go faster
-- [/s] make the lyrics go slower
-- [/rs] same thing as /s but go even more slower
-- [/ns] sets normal speed
-- [/i] instant speed
-- [/c] clears the screen
-- [/nl] ***proper*** new line
-- [/d] sets a delay before going to a new line, can be automated with WYGgen
-## Examples 
+## Making Your Own Lyrics:
+Run LyricGenerator.py to create lyrics. This will generate lyrics.txt and set delays for your lyrics.
 
-Hello, i am normal scrolling speed
-***/f***OOOO im fast !! ***/r***sanndd im slow now
-***/rs***im reallllyyy sloowww ***/ns***and im normal speed!
-***/i***INSTANT!!! ***/nl***
-this is a delay of 2 seconds before going to the next line***/d2.00***
+Syntax:
+- `[/f]`: Speed up the lyrics.
+- `[/s]`: Slow down the lyrics.
+- `[/rs]`: Slow down the lyrics even more.
+- `[/ns]`: Set normal speed for the lyrics.
+- `[/i]`: Instantaneous speed for the lyrics.
+- `[/c]`: Clear the screen.
+- `[/nl]`: Properly start a new line.
+- `[/d]`: Set a delay before starting a new line.
 
-WYGpython by Juicey is marked with CC0 1.0 Universal. To view a copy of this license, visit http://creativecommons.org/publicdomain/zero/1.0
-(that means you can copy it without crediting me :) )
+To change the song: Go to line 67 in WantYouGone.py and change "WantYouGone.mp3".
+
+## License
+
+WantYouGonePython by Juicey is licensed under [CC0 1.0 Universal](http://creativecommons.org/publicdomain/zero/1.0).
