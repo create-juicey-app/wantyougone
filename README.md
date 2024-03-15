@@ -4,6 +4,16 @@ litteraly https://www.youtube.com/watch?v=lT-NxwrjgZM
 
 ps: you can use this project everywhere idc, make your own dreams
 
+# Style your shell
+![shell_screen.png](styles%2Fshell_screen.png)
+For windows users you need to use Terminal https://github.com/microsoft/terminal.
+
+There is profiles with themes in Terminal/Settings/Open JSON file(bottom left corner).
+There is profile and theme in /styles/ folder in repository. 
+You need copy and paste carefully the content of the file in the JSON file.
+
+After that you can find new pretty profile in terminal named 'Aperture'. Have fun!
+
 # Usage
 Execute wantyougone.py using any version of python thats over 3.6, if you want to start the GUI version, well execute start.py **ONLY USING THE COMMAND PROMPT** 
 

@@ -1,0 +1,15 @@
+            {
+                "name": "Aperture",
+                "adjustIndistinguishableColors": "indexed",
+                "colorScheme": "GlaDoS",
+                "cursorHeight": 20,
+                "cursorShape": "vintage",
+                "experimental.retroTerminalEffect": true,
+                "font": 
+                {
+                    "face": "OCR A",
+                    "size": 14.0
+                },
+                "guid": "{fb6ec90f-fd33-471c-8b7a-be35a909eb6b}",
+                "hidden": false
+            }
