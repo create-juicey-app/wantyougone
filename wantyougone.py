@@ -74,14 +74,20 @@ if os.path.exists(bg_music_file):
 original_wpm = 800 
 wpm = original_wpm
 
+print("\033[38;2;255;212;87m") # set foreground color
+print("\033[48;2;78;44;11m") # set background color
+print("\033[2J") # clear screen
+print("\033[H") # set cursor to top left position
+
 for line in lyrics.split("\n"):
     if '/c' in line:
-        os.system('cls' if os.name == 'nt' else 'clear')
+        print("\033[2J") # clear screen
+        print("\033[H") # set cursor to top left position
     elif line.strip() and '/nl' not in line:
         type_with_wpm(line, wpm)
         print()
     elif line.strip():
         type_with_wpm(line, wpm)
 
-
+print("\033[0;0m") # reset all formatting
 pygame.mixer.music.stop()
