@@ -1,41 +1,46 @@
+Got it, here's a more concise update to the WYGpython project:
+
 # WYGpython
 
-litteraly https://www.youtube.com/watch?v=lT-NxwrjgZM
+Literally, the video: https://www.youtube.com/watch?v=lT-NxwrjgZM
 
-ps: you can use this project everywhere idc, make your own dreams
+This project can be used anywhere, feel free to make it your own and turn your dreams into reality.
 
-# Style your shell
-![shell_screen.png](styles%2Fshell_screen.png)
-For windows users you need to use Terminal https://github.com/microsoft/terminal.
+## Style your shell
 
-There is profiles with themes in Terminal/Settings/Open JSON file(bottom left corner).
-There is profile and theme in /styles/ folder in repository. 
-You need copy and paste carefully the content of the file in the JSON file.
+![shell_screen.png](styles/shell_screen.png)
 
-After that you can find new pretty profile in terminal named 'Aperture'. Have fun!
+For Windows users, you'll need to use the [Microsoft Terminal](https://github.com/microsoft/terminal). Inside the Terminal, go to Settings > Open JSON file (bottom left corner). There, you can find the profiles and themes in the `/styles/` folder of this repository. Copy and paste the content of the file carefully into the JSON file.
 
-# Usage
-Execute wantyougone.py using any version of python thats over 3.6, if you want to start the GUI version, well execute start.py **ONLY USING THE COMMAND PROMPT** 
+After that, you should be able to find the new "Aperture" profile in your Terminal. Enjoy your new, pretty shell!
 
-If you wanna make your own lyrics you can exectue WYGgen.py, this will create a copy to lyrics.txt and set the delays for the lyrics you made, 
+## Usage
 
-heres the syntax for a lyrics file :
+To use WYGpython, execute `wantyougone.py` using any Python version 3.6 or higher. If you want to start the GUI version, run `start.py` **ONLY USING THE COMMAND PROMPT**.
 
-- [/f] make the lyrics go faster
-- [/s] make the lyrics go slower
-- [/rs] same thing as /s but go even more slower
-- [/ns] sets normal speed
-- [/i] instant speed
-- [/c] clears the screen
-- [/nl] ***proper*** new line
-- [/d] sets a delay before going to a new line, can be automated with WYGgen
-## Examples 
+If you want to create your own lyrics, run `WYGgen.py`. This will create a copy of the lyrics in the `lyrics.txt` file and set the delays for the lyrics you made. The syntax for the lyrics file is as follows:
 
-Hello, i am normal scrolling speed
-***/f***OOOO im fast !! ***/r***sanndd im slow now
-***/rs***im reallllyyy sloowww ***/ns***and im normal speed!
-***/i***INSTANT!!! ***/nl***
-this is a delay of 2 seconds before going to the next line***/d2.00***
+- `[/f]` - Make the lyrics go faster
+- `[/s]` - Make the lyrics go slower
+- `[/rs]` - Same as `/s`, but go even more slowly
+- `[/ns]` - Sets normal speed
+- `[/i]` - Instant speed
+- `[/c]` - Clears the screen
+- `[/nl]` - **Proper** new line
+- `[/d]` - Sets a delay before going to a new line, can be automated with `WYGgen.py`
 
-WYGpython by Juicey is marked with CC0 1.0 Universal. To view a copy of this license, visit http://creativecommons.org/publicdomain/zero/1.0
-(that means you can copy it without crediting me :) )
+## Examples
+
+```
+Hello, I am normal scrolling speed
+
+***[/f]***OOOO I'm fast!! ***[/r]***sanndd I'm slow now
+
+***[/rs]***I'm reallllyyy sloowww ***[/ns]***and I'm normal speed!
+
+***[/i]***INSTANT!!! ***[/nl]***
+
+This is a delay of 2 seconds before going to the next line***[/d2.00]***
+```
+
+WYGpython by Juicey is marked with CC0 1.0 Universal. To view a copy of this license, visit http://creativecommons.org/publicdomain/zero/1.0 (that means you can copy it without crediting me :) ).
