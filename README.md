@@ -29,6 +29,8 @@ If you want to create your own lyrics, run `WYGgen.py`. This will create a copy 
 - `[/nl]` - **Proper** new line
 - `[/d]` - Sets a delay before going to a new line, can be automated with `WYGgen.py`
 
+**Disclaimer: My script is so fucked up that some syntaxes need to be at the end of the line, cant tell who's who because im writing this as it is 3am and working on a website.**
+
 ## Examples
 
 ```
