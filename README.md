@@ -1,5 +1,5 @@
 # Want You Gone in Python
-
+## WARNING, THIS BRANCH IS EXPERIMENTAL, RANDOM UNPREDICATBLE SHIT CAN HAPPEN, DONT WHINE IF THE SCRIPT IS NOT WORKING AND OPEN A ISSUE.
 The Python project, from [this video](https://youtu.be/lT-NxwrjgZM).
 
 ## Usage
