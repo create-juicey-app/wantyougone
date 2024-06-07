@@ -26,13 +26,6 @@ class CustomConsole(tk.Tk):
         )
         self.frame.place(relx=0.7, rely=0.02, anchor='nw')
 
-        self.matrix = customtkinter.CTkLabel(
-            master=self.frame, anchor="ne", justify="left", text="101001110100",
-            width=100, height=30, text_color="#e9b15d", font=("Console", 12)
-        )
-        self.matrix.place(relx=0.5, rely=0.5, anchor='center')
-
-        self.update_matrix()
         self.process = None
         self.output_queue = queue.Queue()
 
