@@ -1,4 +1,3 @@
-Got it, here's a more concise update to the WYGpython project:
 
 # WYGpython
 
