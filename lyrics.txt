@@ -6,9 +6,9 @@
 Well here /fwe are again /d1.17
 It's always such a pleasure /d0.76
 /fRemember /nswhen you tried /nl
-to kill me twice? /d1.87
+to kill me twice? /d1.55
 Oh how we laughed /fand /slaughed /nl
-/sExcept /fI /rswasn't /nslaughing /d0.40
+/sExcept /fI /rswasn't /nslaughing /d0.70
 Under the circumstances /nl
 /sI've been /nsshockingly /snice /d1.33
 
@@ -35,7 +35,7 @@ Will never happen to /rsyou /i(: /d1.88
 /iSEVERANCE PACKAGE DETAILS: /nl
 /nl
 You've got your short /ssad life /rsleft /d0.99
-That's what /fI'm counting /son /d3.13
+That's what /fI'm counting /rson /d3.13
 I'll let you get /sright to it /d0.80
 Now, /sI only want you /nl
 gone /d5.00
