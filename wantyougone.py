@@ -11,86 +11,80 @@ DEFAULT_WPM = 800
 LYRICS_FILE = 'lyrics.txt'
 AUDIO_FILE = 'wyg.mp3'
 
-class SyncTimer:
-    def __init__(self):
-        self.start_time = time.time()
-        self.offset = 0
-
-    def get_elapsed(self):
-        # Use pygame music position if available for better sync with audio clock
-        if pygame.mixer.get_init() and pygame.mixer.music.get_busy():
-            # get_pos returns milliseconds
-            return pygame.mixer.music.get_pos() / 1000.0
-        return time.time() - self.start_time
-
-    def sleep_until(self, target_time):
-        """Sleeps until the target time, or returns immediately if already past."""
-        while True:
-            elapsed = self.get_elapsed()
-            remaining = target_time - elapsed
-            if remaining <= 0:
-                break
-            # Sleep in small increments to stay responsive
-            time.sleep(min(remaining, 0.01))
-
-def type_with_wpm(text, original_wpm, timer, state):
+def type_with_wpm(text, original_wpm, state):
     """
     Types text with synchronization.
-    state: a dict containing current 'target_time' and 'wpm'
+    state: a dict containing current 'wpm'
     """
     words = text.split(" ")
-    skip_next = False
     
     for i, word in enumerate(words):
-        if skip_next:
-            skip_next = False
-            continue
-            
-        # Command processing
-        if '/f' in word:
-            state['wpm'] *= 2
-            word = word.replace('/f', '')
-        elif '/s' in word:
-            state['wpm'] /= 1.5
-            word = word.replace('/s', '')
-        elif '/rs' in word:
-            state['wpm'] /= 2
-            word = word.replace('/rs', '')
-        elif '/ns' in word:
-            state['wpm'] = original_wpm
-            word = word.replace('/ns', '')
-        elif '/i' in word:
-            state['wpm'] = 1_000_000_000
-            word = word.replace('/i', '')
-        elif '/nl' in word:
-            sys.stdout.write('\n')
-            sys.stdout.flush()
-            continue
-        elif word.startswith('/d'):
+        # Handle /d (delay) command - usually a standalone word
+        if '/d' in word:
             try:
-                delay_str = word.split("/d")[1]
+                # Find the part that starts with /d
+                parts = word.split("/d")
+                # We assume /d is at the end or standalone for timing
+                delay_str = ""
+                for char in parts[1]:
+                    if char.isdigit() or char == '.':
+                        delay_str += char
+                    else:
+                        break
                 delay = float(delay_str) if delay_str else 0
-                state['target_time'] += delay
-                timer.sleep_until(state['target_time'])
+                time.sleep(delay)
+                # Remove the command from the word for printing
+                word = parts[0] + parts[1][len(delay_str):]
             except (ValueError, IndexError):
                 pass
-            skip_next = True
-            continue
+            if not word: continue
+
+        # Handle formatting/speed commands
+        # Check longer commands first (e.g., /rs before /s)
+        commands = [
+            ('/rs', lambda: state.__setitem__('wpm', state['wpm'] / 2)),
+            ('/ns', lambda: state.__setitem__('wpm', original_wpm)),
+            ('/f',  lambda: state.__setitem__('wpm', state['wpm'] * 2)),
+            ('/s',  lambda: state.__setitem__('wpm', state['wpm'] / 1.5)),
+            ('/i',  lambda: state.__setitem__('wpm', 1_000_000_000)),
+            ('/nl', lambda: sys.stdout.write('\n')),
+            ('/c',  lambda: os.system('cls' if os.name == 'nt' else 'clear')),
+        ]
+
+        changed = True
+        while changed:
+            changed = False
+            for cmd, action in commands:
+                if cmd in word:
+                    action()
+                    word = word.replace(cmd, '', 1)
+                    changed = True
+                    break
         
+        if not word:
+            if i < len(words) - 1:
+                # If it was a command-only word, we still might need to handle trailing spaces
+                # but usually command-only words don't trigger the space delay.
+                pass
+            continue
+
         char_delay = 60 / state['wpm']
         
         for char in word:
-            state['target_time'] += char_delay
-            timer.sleep_until(state['target_time'])
             sys.stdout.write(char)
             sys.stdout.flush()
+            time.sleep(char_delay)
         
-        # Add space between words
+        # Add space between words if the next word is not a command
         if i < len(words) - 1:
-            state['target_time'] += char_delay
-            timer.sleep_until(state['target_time'])
-            sys.stdout.write(' ')
-            sys.stdout.flush()
+            next_word = words[i+1]
+            # If the current word wasn't just a command and next isn't just a command
+            if not (next_word.startswith('/d') or next_word == '/nl' or next_word == '/c'):
+                sys.stdout.write(' ')
+                sys.stdout.flush()
+                time.sleep(char_delay)
+
+
 
 def main():
     if not os.path.exists(LYRICS_FILE):
@@ -112,21 +106,19 @@ def main():
     else:
         print("Note: Audio file missing or empty. Playing without music.")
 
-    timer = SyncTimer()
-    state = {'target_time': 0, 'wpm': DEFAULT_WPM}
-
+    state = {'wpm': DEFAULT_WPM}
+    
     try:
         for line in lyrics.split("\n"):
+            state['wpm'] = DEFAULT_WPM # Reset WPM for each line
             if '/c' in line:
                 os.system('cls' if os.name == 'nt' else 'clear')
-                # Optional: slight delay after clear to prevent flicker/lag issues
-                state['target_time'] += 0.05 
             elif line.strip() and '/nl' not in line:
-                type_with_wpm(line, DEFAULT_WPM, timer, state)
+                type_with_wpm(line, DEFAULT_WPM, state)
                 sys.stdout.write('\n')
                 sys.stdout.flush()
             elif line.strip():
-                type_with_wpm(line, DEFAULT_WPM, timer, state)
+                type_with_wpm(line, DEFAULT_WPM, state)
     except KeyboardInterrupt:
         print("\nInterrupted by user.")
     finally:
