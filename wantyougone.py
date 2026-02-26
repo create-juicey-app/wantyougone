@@ -1,87 +1,137 @@
-# this script preserves extra spaces
+#!/usr/bin/env python3
 import os
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 import sys
 import time
 import pygame
 
-def type_with_wpm(text, wpm):
-    words = text.split(" ")  # Split by space to preserve extra spaces
+# Hide pygame support prompt
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+
+DEFAULT_WPM = 800
+LYRICS_FILE = 'lyrics.txt'
+AUDIO_FILE = 'wyg.mp3'
+
+class SyncTimer:
+    def __init__(self):
+        self.start_time = time.time()
+        self.offset = 0
+
+    def get_elapsed(self):
+        # Use pygame music position if available for better sync with audio clock
+        if pygame.mixer.get_init() and pygame.mixer.music.get_busy():
+            # get_pos returns milliseconds
+            return pygame.mixer.music.get_pos() / 1000.0
+        return time.time() - self.start_time
+
+    def sleep_until(self, target_time):
+        """Sleeps until the target time, or returns immediately if already past."""
+        while True:
+            elapsed = self.get_elapsed()
+            remaining = target_time - elapsed
+            if remaining <= 0:
+                break
+            # Sleep in small increments to stay responsive
+            time.sleep(min(remaining, 0.01))
+
+def type_with_wpm(text, original_wpm, timer, state):
+    """
+    Types text with synchronization.
+    state: a dict containing current 'target_time' and 'wpm'
+    """
+    words = text.split(" ")
     skip_next = False
-    for word in words:
+    
+    for i, word in enumerate(words):
         if skip_next:
             skip_next = False
             continue
+            
+        # Command processing
         if '/f' in word:
-            wpm *= 2
+            state['wpm'] *= 2
             word = word.replace('/f', '')
         elif '/s' in word:
-            wpm /= 1.5
+            state['wpm'] /= 1.5
             word = word.replace('/s', '')
         elif '/rs' in word:
-            wpm /= 2
+            state['wpm'] /= 2
             word = word.replace('/rs', '')
         elif '/ns' in word:
-            wpm = original_wpm
+            state['wpm'] = original_wpm
             word = word.replace('/ns', '')
         elif '/i' in word:
-            wpm *= 9999999999
+            state['wpm'] = 1_000_000_000
             word = word.replace('/i', '')
         elif '/nl' in word:
-            print()
+            sys.stdout.write('\n')
+            sys.stdout.flush()
             continue
         elif word.startswith('/d'):
-            split_word = word.split("/d")
-            if len(split_word) > 1 and split_word[1].strip():
-                delay = float(split_word[1])
-            else:
-                delay = 0
-            time.sleep(delay)
+            try:
+                delay_str = word.split("/d")[1]
+                delay = float(delay_str) if delay_str else 0
+                state['target_time'] += delay
+                timer.sleep_until(state['target_time'])
+            except (ValueError, IndexError):
+                pass
             skip_next = True
             continue
         
-        delay = 60 / wpm
+        char_delay = 60 / state['wpm']
         
-        for i, char in enumerate(word):
+        for char in word:
+            state['target_time'] += char_delay
+            timer.sleep_until(state['target_time'])
             sys.stdout.write(char)
             sys.stdout.flush()
-            time.sleep(delay)
         
-        if word != words[-1]:
+        # Add space between words
+        if i < len(words) - 1:
+            state['target_time'] += char_delay
+            timer.sleep_until(state['target_time'])
             sys.stdout.write(' ')
             sys.stdout.flush()
-            time.sleep(delay)
-    sys.stdout.flush()
 
+def main():
+    if not os.path.exists(LYRICS_FILE):
+        print(f"Error: {LYRICS_FILE} not found.")
+        sys.exit(1)
 
-lyrics_file = './lyrics.txt'
-if not os.path.exists(lyrics_file):
-    print("Unable to find the file 'lyrics.txt'.")
-    sys.exit()
+    with open(LYRICS_FILE, 'r', encoding='utf-8') as f:
+        lyrics = f.read()
 
-with open(lyrics_file, 'r') as file:
-    lyrics = file.read()
+    pygame.init()
+    audio_exists = os.path.exists(AUDIO_FILE) and os.path.getsize(AUDIO_FILE) > 0
+    
+    if audio_exists:
+        try:
+            pygame.mixer.music.load(AUDIO_FILE)
+            pygame.mixer.music.play()
+        except pygame.error as e:
+            print(f"Warning: Could not play audio. {e}")
+    else:
+        print("Note: Audio file missing or empty. Playing without music.")
 
-bg_music_file = "wyg.mp3"
-if not os.path.exists(bg_music_file):
-    print("Unable to find the file 'wyg.mp3'. Background music will not play.")
+    timer = SyncTimer()
+    state = {'target_time': 0, 'wpm': DEFAULT_WPM}
 
-pygame.init()
-if os.path.exists(bg_music_file):
-    pygame.mixer.music.load(bg_music_file)
-    pygame.mixer.music.play()
+    try:
+        for line in lyrics.split("\n"):
+            if '/c' in line:
+                os.system('cls' if os.name == 'nt' else 'clear')
+                # Optional: slight delay after clear to prevent flicker/lag issues
+                state['target_time'] += 0.05 
+            elif line.strip() and '/nl' not in line:
+                type_with_wpm(line, DEFAULT_WPM, timer, state)
+                sys.stdout.write('\n')
+                sys.stdout.flush()
+            elif line.strip():
+                type_with_wpm(line, DEFAULT_WPM, timer, state)
+    except KeyboardInterrupt:
+        print("\nInterrupted by user.")
+    finally:
+        pygame.mixer.music.stop()
+        pygame.quit()
 
-original_wpm = 800 
-wpm = original_wpm
-
-for line in lyrics.split("\n"):
-    if '/c' in line:
-        os.system('cls' if os.name == 'nt' else 'clear')
-    elif line.strip() and '/nl' not in line:
-        type_with_wpm(line, wpm)
-        print()
-    elif line.strip():
-        type_with_wpm(line, wpm)
-
-
-pygame.mixer.music.stop()
+if __name__ == "__main__":
+    main()

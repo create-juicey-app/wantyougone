@@ -15,7 +15,9 @@ After that, you should be able to find the new "Aperture" profile in your Termin
 
 ## Usage
 
-To use WYGpython, execute `wantyougone.py` using any Python version 3.6 or higher. If you want to start the GUI version, run `start.py` **ONLY USING THE COMMAND PROMPT**.
+**IMPORTANT REMINDER:** For copyright reasons, the `wyg.mp3` file included in this repository is empty. To hear the music while the script runs, you **MUST** provide your own `wyg.mp3` file. You can get the official song from "Portal 2" by Valve Software or from various official music platforms. Place your own `wyg.mp3` in the root directory of this project.
+
+To use WYGpython, execute `wantyougone.py` using any Python version 3.6 or higher. 
 
 If you want to create your own lyrics, run `WYGgen.py`. This will create a copy of the lyrics in the `lyrics.txt` file and set the delays for the lyrics you made. The syntax for the lyrics file is as follows:
 
