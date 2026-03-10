@@ -1,7 +1,7 @@
 
 # WYGpython
 
-Literally, the video: https://www.youtube.com/watch?v=lT-NxwrjgZM
+Demo: https://www.youtube.com/watch?v=lT-NxwrjgZM
 
 This project can be used anywhere, feel free to make it your own and turn your dreams into reality.
 
